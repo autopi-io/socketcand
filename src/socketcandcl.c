@@ -13,6 +13,7 @@
  *
  */
 
+#include "config.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -146,7 +147,7 @@ int main(int argc, char **argv)
 			return 0;
 
 		case 'z':
-			printf("socketcandcl version '%s'\n", "0.1");
+			printf("socketcandcl version '%s'\n", PACKAGE_VERSION);
 			return 0;
 
 		case '?':
