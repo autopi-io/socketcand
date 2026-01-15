@@ -105,7 +105,7 @@ int main(int argc, char **argv)
 			{ 0, 0, 0, 0 }
 		};
 
-		c = getopt_long(argc, argv, "vhi:p:l:s:u:", long_options, &option_index);
+		c = getopt_long(argc, argv, "vhzi:p:l:s:u:", long_options, &option_index);
 
 		if (c == -1)
 			break;
