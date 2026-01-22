@@ -43,17 +43,22 @@
 #define STATE_CONNECTED 1
 #define STATE_SHUTDOWN 2
 
-#define PRINT_INFO(...)              \
-	do {                         \
+#define PRINT_INFO(...)      \
+	do {                     \
 		printf(__VA_ARGS__); \
+		fflush(stdout);      \
 	} while (0)
-#define PRINT_ERROR(...)                      \
-	do {                                  \
+
+#define PRINT_ERROR(...)              \
+	do {                              \
 		fprintf(stderr, __VA_ARGS__); \
+		fflush(stderr);               \
 	} while (0)
-#define PRINT_VERBOSE(...)           \
-	do {                         \
+
+#define PRINT_VERBOSE(...)   \
+	do {                     \
 		printf(__VA_ARGS__); \
+		fflush(stdout);      \
 	} while (0)
 
 void print_usage(void);

@@ -22,24 +22,32 @@
 #define STATE_CONTROL 4
 #define STATE_ISOTP 5
 
-#define PRINT_INFO(...)                                \
-	do {                                           \
-		if (daemon_flag)                       \
+#define PRINT_INFO(...)                    \
+	do {                                   \
+		if (daemon_flag) {                 \
 			syslog(LOG_INFO, __VA_ARGS__); \
-		else                                   \
+		} else {                           \
 			printf(__VA_ARGS__);           \
+			fflush(stdout);                \
+		}                                  \
 	} while (0)
-#define PRINT_ERROR(...)                              \
-	do {                                          \
-		if (daemon_flag)                      \
+
+#define PRINT_ERROR(...)                  \
+	do {                                  \
+		if (daemon_flag) {                \
 			syslog(LOG_ERR, __VA_ARGS__); \
-		else                                  \
+		} else {                          \
 			fprintf(stderr, __VA_ARGS__); \
+			fflush(stderr);               \
+		}                                 \
 	} while (0)
-#define PRINT_VERBOSE(...)                        \
-	do {                                      \
-		if (verbose_flag && !daemon_flag) \
-			printf(__VA_ARGS__);      \
+
+#define PRINT_VERBOSE(...)                  \
+	do {                                    \
+		if (verbose_flag && !daemon_flag) { \
+			printf(__VA_ARGS__);            \
+			fflush(stdout);                 \
+		}                                   \
 	} while (0)
 
 #ifndef VERSION_STRING
