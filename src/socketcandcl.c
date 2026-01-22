@@ -125,6 +125,7 @@ int main(int argc, char **argv)
 
 		case 'v':
 			puts("Verbose output activated\n");
+			fflush(stdout); 
 			verbose_flag = 1;
 			break;
 
